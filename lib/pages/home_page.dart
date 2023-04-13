@@ -16,7 +16,11 @@ class HomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: HomeListWidgit(),
+        child: ListView.builder(
+            itemCount: HistoryModel.history.length,
+            itemBuilder: (context, index) {
+              return HistoryWidget(patienthistory: HistoryModel.history[index]);
+            }),
       ),
       drawer: MyDrawer(),
     );
